@@ -1,0 +1,22 @@
+<%# HTML layout %>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <%# Title %>
+  <title>Crypto Price Checker</title>
+
+  <%# stylesheet %>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <main class="container">
+
+    <%# intercept res.render (index or results), render .ejs, store HTML in body %>
+    <%- body %>
+  </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<%# Home/Input Page %>
+
+<%# header %>
+<h1>Check a Crypto Price</h1>
+
+<%# submit to POST /price %>
+<form action="/price" method="post" class="card">
+
+    <%# API handler %>
+    <label>Data Provider</label>
+    <select name="provider">
+        <option value="coingecko">CoinGecko (multi-coin)</option>
+    </select>
+
+    <%# coin and fiat inputs %>
+    <label>Coin ID (for CoinGecko)</label>
+    <input name="coin" value="bitcoin" placeholder="e.g., bitcoin, ethereum" />
+    <label>Fiat Currency</label>
+    <input name="fiat" value="USD" placeholder="USD, EUR, JPY" />
+
+    <button type="submit">Get Price</button>
+</form>

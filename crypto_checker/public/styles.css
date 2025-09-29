@@ -1,0 +1,43 @@
+/* stylesheet for Crypto Price Checker */
+
+:root { 
+    font-family: system-ui, sans-serif; 
+    line-height: 1.4; 
+}
+
+.big { 
+    font-size: 1.4rem; 
+}
+
+button { 
+    cursor: pointer; 
+}
+
+.card { 
+    display: grid; 
+    gap: .5rem; 
+    padding: 1rem; 
+    border: 1px solid #ddd; 
+    border-radius: .75rem; 
+}
+
+.container { 
+    max-width: 720px; 
+    margin: 2rem auto; 
+    padding: 0 1rem; 
+}
+
+.error { 
+    border-color: #f6b; 
+    background: #fff2f8; 
+}
+
+input, select, button { 
+    padding: .6rem .8rem; 
+    border: 1px solid #ccc; 
+    border-radius: .5rem; 
+}
+
+label { 
+    font-weight: 600; 
+}

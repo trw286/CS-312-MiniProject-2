@@ -1,0 +1,26 @@
+<%# Result Page %>
+
+<%# link back to input page %>
+<a href="/">← Back</a>
+
+<%# check if data was captured %>
+<% if (ok) { %>
+  <div class="card">
+
+    <%# display coin, fiat, and price %>
+    <h2><%= data.coin %> → <%= data.fiat.toUpperCase() %></h2>
+    <p class="big">Price: 
+        <strong><%= Number(data.price).toLocaleString('en-US', { minimumFractionDigits: 2 , maximumFractionDigits: 4 }) %></strong>
+    </p>
+
+    <%# API handler %>
+    <small>Provider: CoinGecko </small>
+  </div>
+
+<%# data wasn't captured %>
+<% } else { %>
+  <div class="card error">
+    <h2>Something went wrong</h2>
+    <p><%= error %></p>
+  </div>
+<% } %>
