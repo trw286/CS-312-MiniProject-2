@@ -4,7 +4,7 @@ import axios from "axios";                     // for making HTTP requests
 const router = express.Router();
 
 // axios instance for CoinGecko API
-const cg = axios.create({
+const coinGeckoInstance = axios.create({
   baseURL: "https://api.coingecko.com/api/v3",
   timeout: 8000,
   headers: process.env.CG_DEMO_API_KEY
