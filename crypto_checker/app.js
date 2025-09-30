@@ -1,3 +1,4 @@
+// imports
 import express from "express";
 import path from "path";
 import expressLayouts from "express-ejs-layouts";       // middleware for layout support
