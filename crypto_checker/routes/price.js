@@ -23,7 +23,7 @@ const symbolToID = {
 // POST /price
 router.post("/", async (req, res) => {
 
-    // get coin and fiat from form, with defaults
+    // get coin and fiat from form, or fill with defaults
     const coinRaw = (req.body.coin || "bitcoin").trim();
     const fiatRaw = (req.body.fiat || "USD").trim();
 
@@ -31,16 +31,16 @@ router.post("/", async (req, res) => {
         // coin: use symbolToID map, default to lowercased input
         // fiat: uppercase input
     const coinID = symbolToID[coinRaw.toLowerCase()] || coinRaw.toLowerCase();
-    const fiat = fiatRaw.toUpperCase();
+    const fiat = fiatRaw.toLowerCase();
 
     // call CoinGecko API
     try {
-        const { data } = await cg.get("/simple/price", {
-            params: { ids: coinID, vs_currencies: fiat.toLowerCase() },
+        const { data } = await coinGeckoInstance.get("/simple/price", {
+            params: { ids: coinID, vs_currencies: fiat }
         });
 
         // extract price from response
-        const val = data?.[coinID]?.[fiat.toLowerCase()];
+        const val = data?.[coinID]?.[fiat];
         if (val == null) {
             throw new Error("No price found for that coin. Check that the coin is a valid CoinGecko ID.");
     }
