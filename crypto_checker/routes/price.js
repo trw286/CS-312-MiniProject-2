@@ -28,8 +28,6 @@ router.post("/", async (req, res) => {
     const fiatRaw = (req.body.fiat || "USD").trim();
 
     // normalize coin and fiat
-        // coin: use symbolToID map, default to lowercased input
-        // fiat: uppercase input
     const coinID = symbolToID[coinRaw.toLowerCase()] || coinRaw.toLowerCase();
     const fiat = fiatRaw.toLowerCase();
 

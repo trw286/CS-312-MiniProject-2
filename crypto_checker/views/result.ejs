@@ -10,7 +10,9 @@
     <%# display coin, fiat, and price %>
     <h2><%= data.coin %> → <%= data.fiat.toUpperCase() %></h2>
     <p class="big">Price: 
-        <strong><%= Number(data.price).toLocaleString('en-US', { minimumFractionDigits: 2 , maximumFractionDigits: 4 }) %></strong>
+        <strong>
+        <%= Number(data.price).toLocaleString('en-US', { minimumFractionDigits: 2 , maximumFractionDigits: 4 }) %>
+        </strong>
     </p>
 
     <%# API handler %>
